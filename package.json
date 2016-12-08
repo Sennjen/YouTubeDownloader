@@ -1,0 +1,20 @@
+{
+  "name": "you-tube-downloader",
+  "version": "1.0.0",
+  "description": "YouTube Downloader",
+  "scripts": {
+    "start": "http-server -a localhost -p 8000 -c-1"
+  },
+  "author": "Eugen Dzubenko",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.9",
+    "angular-animate": "^1.5.9",
+    "angular-aria": "^1.5.9",
+    "angular-material": "^1.1.1",
+    "angular-youtube-api-factory": "^0.6.2"
+  },
+  "devDependencies": {
+    "http-server": "^0.6.1"
+  }
+}
