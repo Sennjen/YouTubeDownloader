@@ -2,17 +2,18 @@ app.controller('VideoController',['$scope','youtubeFactory','$mdDialog', functio
     $scope.searchResults = [];
     $scope.searchQuery = '';
     $scope.nextPageToken = '';
+    $scope.showSpinner = false;
     $scope.apiKeys = [
         'AIzaSyAiHmiWsHBbzoSojnV3kkQKsh0qNvQoTHg',
         'AIzaSyAB0-bh7U4jSH9Mknwe0ke693fNg3ZaBTc',
         'AIzaSyBKMRMYEiUIePp2IKzBNgCaxVLgFhjMSlQ'];
-    console.log();
     $scope.searchVideo = function () {
         $scope.searchResults = [];
         $scope.nextPageToken = '';
         $scope.getYouTubeData()
     };
     $scope.getYouTubeData = function () {
+        $scope.showSpinner = true;
         youtubeFactory.getVideosFromSearchByParams({
             q: $scope.searchQuery,
             key: $scope.apiKeys[Math.floor(Math.random() * 3)],
@@ -21,6 +22,7 @@ app.controller('VideoController',['$scope','youtubeFactory','$mdDialog', functio
         }).then(function (_data) {
             $scope.searchResults.push.apply($scope.searchResults, _data.data.items);
             $scope.nextPageToken = _data.data.nextPageToken;
+            $scope.showSpinner = false;
         }).catch(function (_data) {});
     };
     $scope.showVideo = function (ev, vid) {

@@ -33,16 +33,36 @@ md-content {
   padding-top: 20px;
   padding-bottom: 20px; }
   md-content md-list md-list-item {
+    position: relative;
     margin-bottom: 5px; }
+    @media (max-width: 350px) {
+      md-content md-list md-list-item {
+        padding-top: 95px !important; } }
     md-content md-list md-list-item img {
       cursor: pointer; }
+    md-content md-list md-list-item .video-thumb {
+      width: 120px; }
+      @media (max-width: 400px) {
+        md-content md-list md-list-item .video-thumb {
+          width: 80px; } }
+      @media (max-width: 350px) {
+        md-content md-list md-list-item .video-thumb {
+          position: absolute;
+          width: 120px;
+          top: 0; } }
     md-content md-list md-list-item .md-list-item-text {
+      position: relative;
       padding-left: 10px; }
+      md-content md-list md-list-item .md-list-item-text .play-btn img {
+        height: 84px;
+        float: left;
+        margin-top: -13px; }
       md-content md-list md-list-item .md-list-item-text h3 {
         font-weight: bold !important;
         margin-bottom: 15px !important; }
-      md-content md-list md-list-item .md-list-item-text iframe {
-        margin-bottom: 5px; }
+      md-content md-list md-list-item .md-list-item-text .iframe-container {
+        position: absolute;
+        left: 105px; }
 
 md-dialog {
   width: 100%;

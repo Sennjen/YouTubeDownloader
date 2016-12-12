@@ -41,18 +41,42 @@ md-content{
   padding-bottom: 20px;
   md-list{
     md-list-item{
+      position: relative;
       margin-bottom: 5px;
+      @media (max-width: 350px){
+        padding-top: 95px!important;
+      }
       img{
         cursor: pointer;
       }
+      .video-thumb{
+        width: 120px;
+        @media (max-width: 400px){
+          width: 80px;
+        }
+        @media (max-width: 350px){
+          position: absolute;
+          width: 120px;
+          top: 0;
+        }
+      }
       .md-list-item-text{
+        position: relative;
         padding-left: 10px;
+        .play-btn{
+          img{
+            height: 84px;
+            float: left;
+            margin-top: -13px;
+          }
+        }
         h3{
           font-weight: bold!important;
           margin-bottom: 15px!important;
         }
-        iframe{
-          margin-bottom: 5px;
+        .iframe-container{
+          position: absolute;
+          left: 105px;
         }
       }
     }
